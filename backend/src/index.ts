@@ -1,7 +1,7 @@
 import express from 'express';
 import 'express-async-errors';
 import { json } from 'body-parser';
-// import sequelize from './sequelize';
+import sequelize from './sequelize';
 
 /*
 import { currentUserRouter } from './routes/current-user';
@@ -9,7 +9,6 @@ import { signinRouter } from './routes/signin';
 import { signupRouter } from './routes/signup';
 import { signoutRouter } from './routes/signout';
 import { NotFoundError } from './errors/not-found-error';
-import { User } from './models/User';
 */
 // import { errorHandler } from './middlewares/error-handler';
 import { currentUserRouter } from './routes/current-user';
@@ -33,7 +32,6 @@ app.all('*', async () => {
 
 // app.use(errorHandler);
 
-/*
 const init = async () => {
     try {
         // Tests the connection 
@@ -50,7 +48,3 @@ const init = async () => {
 }
 
 init();
-*/
-app.listen(3306, () => {
-    console.log('Listening on port 3306');
-});
