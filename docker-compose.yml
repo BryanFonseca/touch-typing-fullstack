@@ -1,0 +1,13 @@
+version: '2'
+services:
+  backend:
+    build: 
+      context: ./backend/
+    image: touch-typing-backend
+    container_name: touch-typing-backend
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./backend/src/:/app/src/"
+  #database:
