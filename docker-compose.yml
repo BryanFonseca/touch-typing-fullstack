@@ -8,10 +8,14 @@ services:
     restart: always
     ports:
       - "3000:3000"
+      - "9229:9229" # debugging port
     volumes:
       - "./backend/src/:/app/src/"
+    depends_on:
+      - database
+
   database:
-    image: mysql #oficial dockerhub image
+    image: mysql # oficial dockerhub image
     container_name: touch-typing-db
     environment:
       - MYSQL_ROOT_PASSWORD=root
